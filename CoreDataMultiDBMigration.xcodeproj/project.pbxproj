@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		967A176A1D7C5F4B007652CF /* mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 967A176B1D7C5F4B007652CF /* Build configuration list for PBXAggregateTarget "mogenerator" */;
+			buildPhases = (
+				967A17861D7C67A4007652CF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = mogenerator;
+			productName = mongenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17441D7C5BC9007652CF /* AppDelegate.swift */; };
 		967A17471D7C5BC9007652CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17461D7C5BC9007652CF /* ViewController.swift */; };
@@ -13,6 +27,12 @@
 		967A174C1D7C5BC9007652CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967A174B1D7C5BC9007652CF /* Assets.xcassets */; };
 		967A174F1D7C5BC9007652CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967A174D1D7C5BC9007652CF /* LaunchScreen.storyboard */; };
 		967A175A1D7C5BC9007652CF /* CoreDataMultiDBMigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17591D7C5BC9007652CF /* CoreDataMultiDBMigrationTests.swift */; };
+		967A17941D7C69EF007652CF /* Server.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 967A17921D7C69EF007652CF /* Server.xcdatamodeld */; };
+		967A17971D7C6A3F007652CF /* _Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17951D7C6A3F007652CF /* _Comment.swift */; };
+		967A17981D7C6A3F007652CF /* _Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17961D7C6A3F007652CF /* _Issue.swift */; };
+		967A179B1D7C6A48007652CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17991D7C6A48007652CF /* Comment.swift */; };
+		967A179C1D7C6A48007652CF /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A179A1D7C6A48007652CF /* Issue.swift */; };
+		967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A179D1D7C6BF5007652CF /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +56,12 @@
 		967A17551D7C5BC9007652CF /* CoreDataMultiDBMigrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataMultiDBMigrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		967A17591D7C5BC9007652CF /* CoreDataMultiDBMigrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMultiDBMigrationTests.swift; sourceTree = "<group>"; };
 		967A175B1D7C5BC9007652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		967A17931D7C69EF007652CF /* Server.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Server.xcdatamodel; sourceTree = "<group>"; };
+		967A17951D7C6A3F007652CF /* _Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Comment.swift; sourceTree = "<group>"; };
+		967A17961D7C6A3F007652CF /* _Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Issue.swift; sourceTree = "<group>"; };
+		967A17991D7C6A48007652CF /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		967A179A1D7C6A48007652CF /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		967A179D1D7C6BF5007652CF /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +103,8 @@
 		967A17431D7C5BC9007652CF /* CoreDataMultiDBMigration */ = {
 			isa = PBXGroup;
 			children = (
+				967A17911D7C69EF007652CF /* Model */,
+				967A176E1D7C6106007652CF /* CoreData */,
 				967A17441D7C5BC9007652CF /* AppDelegate.swift */,
 				967A17461D7C5BC9007652CF /* ViewController.swift */,
 				967A17481D7C5BC9007652CF /* Main.storyboard */,
@@ -94,6 +122,42 @@
 				967A175B1D7C5BC9007652CF /* Info.plist */,
 			);
 			path = CoreDataMultiDBMigrationTests;
+			sourceTree = "<group>";
+		};
+		967A176E1D7C6106007652CF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				967A179D1D7C6BF5007652CF /* CoreDataStack.swift */,
+				967A178A1D7C6985007652CF /* Machine */,
+				967A17871D7C6985007652CF /* Human */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		967A17871D7C6985007652CF /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				967A17991D7C6A48007652CF /* Comment.swift */,
+				967A179A1D7C6A48007652CF /* Issue.swift */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		967A178A1D7C6985007652CF /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				967A17951D7C6A3F007652CF /* _Comment.swift */,
+				967A17961D7C6A3F007652CF /* _Issue.swift */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+		967A17911D7C69EF007652CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				967A17921D7C69EF007652CF /* Server.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +215,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 967A17401D7C5BC9007652CF;
 					};
+					967A176A1D7C5F4B007652CF = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 967A173C1D7C5BC9007652CF /* Build configuration list for PBXProject "CoreDataMultiDBMigration" */;
@@ -168,6 +235,7 @@
 			targets = (
 				967A17401D7C5BC9007652CF /* CoreDataMultiDBMigration */,
 				967A17541D7C5BC9007652CF /* CoreDataMultiDBMigrationTests */,
+				967A176A1D7C5F4B007652CF /* mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -192,13 +260,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		967A17861D7C67A4007652CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Server.xcdatamodeld/Server.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		967A173D1D7C5BC9007652CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				967A17471D7C5BC9007652CF /* ViewController.swift in Sources */,
+				967A179C1D7C6A48007652CF /* Issue.swift in Sources */,
+				967A179B1D7C6A48007652CF /* Comment.swift in Sources */,
+				967A17941D7C69EF007652CF /* Server.xcdatamodeld in Sources */,
 				967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */,
+				967A17971D7C6A3F007652CF /* _Comment.swift in Sources */,
+				967A17981D7C6A3F007652CF /* _Issue.swift in Sources */,
+				967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +459,20 @@
 			};
 			name = Release;
 		};
+		967A176C1D7C5F4B007652CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		967A176D1D7C5F4B007652CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -397,7 +501,28 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
+		967A176B1D7C5F4B007652CF /* Build configuration list for PBXAggregateTarget "mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967A176C1D7C5F4B007652CF /* Debug */,
+				967A176D1D7C5F4B007652CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		967A17921D7C69EF007652CF /* Server.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				967A17931D7C69EF007652CF /* Server.xcdatamodel */,
+			);
+			currentVersion = 967A17931D7C69EF007652CF /* Server.xcdatamodel */;
+			path = Server.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 967A17391D7C5BC9007652CF /* Project object */;
 }

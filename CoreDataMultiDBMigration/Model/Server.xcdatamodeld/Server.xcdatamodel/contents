@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="content" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
+        <attribute name="id" attributeType="Transformable" indexed="YES" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSUUID"/>
+            </userInfo>
+        </attribute>
+    </entity>
+    <entity name="Issue" representedClassName="Issue" syncable="YES">
+        <attribute name="comments" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSArray"/>
+            </userInfo>
+        </attribute>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" attributeType="Transformable" indexed="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <userInfo>
+            <entry key="attributeValueClassName" value="NSUUID"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="Issue" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Comment" positionX="-54" positionY="27" width="128" height="90"/>
+    </elements>
+</model>

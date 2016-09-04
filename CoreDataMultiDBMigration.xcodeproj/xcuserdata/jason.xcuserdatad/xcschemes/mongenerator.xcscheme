@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "967A17401D7C5BC9007652CF"
-               BuildableName = "CoreDataMultiDBMigration.app"
-               BlueprintName = "CoreDataMultiDBMigration"
+               BlueprintIdentifier = "967A176A1D7C5F4B007652CF"
+               BuildableName = "mogenerator"
+               BlueprintName = "mogenerator"
                ReferencedContainer = "container:CoreDataMultiDBMigration.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "967A17541D7C5BC9007652CF"
-               BuildableName = "CoreDataMultiDBMigrationTests.xctest"
-               BlueprintName = "CoreDataMultiDBMigrationTests"
-               ReferencedContainer = "container:CoreDataMultiDBMigration.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "967A17401D7C5BC9007652CF"
-            BuildableName = "CoreDataMultiDBMigration.app"
-            BlueprintName = "CoreDataMultiDBMigration"
-            ReferencedContainer = "container:CoreDataMultiDBMigration.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "967A17401D7C5BC9007652CF"
-            BuildableName = "CoreDataMultiDBMigration.app"
-            BlueprintName = "CoreDataMultiDBMigration"
+            BlueprintIdentifier = "967A176A1D7C5F4B007652CF"
+            BuildableName = "mogenerator"
+            BlueprintName = "mogenerator"
             ReferencedContainer = "container:CoreDataMultiDBMigration.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "967A17401D7C5BC9007652CF"
-            BuildableName = "CoreDataMultiDBMigration.app"
-            BlueprintName = "CoreDataMultiDBMigration"
+            BlueprintIdentifier = "967A176A1D7C5F4B007652CF"
+            BuildableName = "mogenerator"
+            BlueprintName = "mogenerator"
             ReferencedContainer = "container:CoreDataMultiDBMigration.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
