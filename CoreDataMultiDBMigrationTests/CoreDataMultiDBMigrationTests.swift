@@ -49,7 +49,7 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
             }
         }
 
-        let serverCoreStack = CoreDataStack(modelName: serverModelName, modelVersionName: serverModelName, storeFileName: storeFile)
+        let serverCoreStack = CoreDataStack(modelName: serverModelName, modelVersion: serverModelName, storeFileName: storeFile)
         let serverContext = serverCoreStack.theMainContext
 
         let newComment0: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Comment", inManagedObjectContext: serverContext)

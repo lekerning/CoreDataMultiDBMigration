@@ -56,7 +56,7 @@ extension NSManagedObject {
 class CoreDataStack: NSObject {
 
     let modelName: String
-    let modelVersionName: String
+    let modelVersion: String
     let sqliteFileName: String
 //    class var sharedInstance: CoreDataStack {
 //        struct Static {
@@ -69,9 +69,9 @@ class CoreDataStack: NSObject {
 //        return Static.instance!
 //    }
 
-    init(modelName: String, modelVersionName: String, storeFileName: String) {
+    init(modelName: String, modelVersion: String, storeFileName: String) {
         self.modelName = modelName
-        self.modelVersionName = modelVersionName
+        self.modelVersion = modelVersion
         self.sqliteFileName = storeFileName
     }
 
@@ -85,7 +85,7 @@ class CoreDataStack: NSObject {
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelFolderURL = NSBundle.mainBundle().URLForResource(self.modelName, withExtension: "momd")!
-        let modelURL = modelFolderURL.URLByAppendingPathComponent(self.modelVersionName + ".mom")
+        let modelURL = modelFolderURL.URLByAppendingPathComponent(self.modelVersion + ".mom")
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
 
