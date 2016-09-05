@@ -39,10 +39,12 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         if let storePath = docDir.URLByAppendingPathComponent(storeFile).path {
             let files = [storePath, storePath + "-shm", storePath + "-wal"]
             for file in files {
-                do {
-                    try fileManager.removeItemAtPath(file)
-                } catch {
-                    print(error)
+                if fileManager.fileExistsAtPath(file) {
+                    do {
+                        try fileManager.removeItemAtPath(file)
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
@@ -75,7 +77,6 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         issue0.setValue([id0, id1], forKey: IssueAttributes.comments.rawValue)
 
         serverCoreStack.saveMainContext()
-
 
     }
 
