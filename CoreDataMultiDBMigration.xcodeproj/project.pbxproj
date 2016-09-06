@@ -33,6 +33,11 @@
 		967A179B1D7C6A48007652CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17991D7C6A48007652CF /* Comment.swift */; };
 		967A179C1D7C6A48007652CF /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A179A1D7C6A48007652CF /* Issue.swift */; };
 		967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A179D1D7C6BF5007652CF /* CoreDataStack.swift */; };
+		968D07F61D7DB83A002480F2 /* Local.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */; };
+		96A897711D7F0F5C006B5A32 /* _Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897701D7F0F5C006B5A32 /* _Role.swift */; };
+		96A897731D7F0F67006B5A32 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897721D7F0F67006B5A32 /* Role.swift */; };
+		96A897751D7F0F94006B5A32 /* _User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897741D7F0F94006B5A32 /* _User.swift */; };
+		96A897771D7F0F9A006B5A32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897761D7F0F9A006B5A32 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,11 @@
 		967A17991D7C6A48007652CF /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		967A179A1D7C6A48007652CF /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		967A179D1D7C6BF5007652CF /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		968D07F51D7DB83A002480F2 /* Local.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Local.xcdatamodel; sourceTree = "<group>"; };
+		96A897701D7F0F5C006B5A32 /* _Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Role.swift; sourceTree = "<group>"; };
+		96A897721D7F0F67006B5A32 /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		96A897741D7F0F94006B5A32 /* _User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _User.swift; sourceTree = "<group>"; };
+		96A897761D7F0F9A006B5A32 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +147,8 @@
 		967A17871D7C6985007652CF /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				96A897761D7F0F9A006B5A32 /* User.swift */,
+				96A897721D7F0F67006B5A32 /* Role.swift */,
 				967A17991D7C6A48007652CF /* Comment.swift */,
 				967A179A1D7C6A48007652CF /* Issue.swift */,
 			);
@@ -146,6 +158,8 @@
 		967A178A1D7C6985007652CF /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				96A897741D7F0F94006B5A32 /* _User.swift */,
+				96A897701D7F0F5C006B5A32 /* _Role.swift */,
 				967A17951D7C6A3F007652CF /* _Comment.swift */,
 				967A17961D7C6A3F007652CF /* _Issue.swift */,
 			);
@@ -156,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				967A17921D7C69EF007652CF /* Server.xcdatamodeld */,
+				968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Server.xcdatamodeld/Server.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true";
+			shellScript = "/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Server.xcdatamodeld/Server.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true\n/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Local.xcdatamodeld/Local.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -281,14 +296,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A897771D7F0F9A006B5A32 /* User.swift in Sources */,
+				96A897751D7F0F94006B5A32 /* _User.swift in Sources */,
 				967A17471D7C5BC9007652CF /* ViewController.swift in Sources */,
+				96A897731D7F0F67006B5A32 /* Role.swift in Sources */,
 				967A179C1D7C6A48007652CF /* Issue.swift in Sources */,
 				967A179B1D7C6A48007652CF /* Comment.swift in Sources */,
+				968D07F61D7DB83A002480F2 /* Local.xcdatamodeld in Sources */,
 				967A17941D7C69EF007652CF /* Server.xcdatamodeld in Sources */,
 				967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */,
 				967A17971D7C6A3F007652CF /* _Comment.swift in Sources */,
 				967A17981D7C6A3F007652CF /* _Issue.swift in Sources */,
 				967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */,
+				96A897711D7F0F5C006B5A32 /* _Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +512,7 @@
 				967A17601D7C5BC9007652CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		967A17611D7C5BC9007652CF /* Build configuration list for PBXNativeTarget "CoreDataMultiDBMigrationTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +521,7 @@
 				967A17631D7C5BC9007652CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		967A176B1D7C5F4B007652CF /* Build configuration list for PBXAggregateTarget "mogenerator" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +530,7 @@
 				967A176D1D7C5F4B007652CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -519,6 +542,16 @@
 			);
 			currentVersion = 967A17931D7C69EF007652CF /* Server.xcdatamodel */;
 			path = Server.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				968D07F51D7DB83A002480F2 /* Local.xcdatamodel */,
+			);
+			currentVersion = 968D07F51D7DB83A002480F2 /* Local.xcdatamodel */;
+			path = Local.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

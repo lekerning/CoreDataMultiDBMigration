@@ -1,0 +1,50 @@
+// DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// Make changes to Role.swift instead.
+
+import Foundation
+import CoreData
+
+public enum RoleAttributes: String {
+    case comment = "comment"
+    case id = "id"
+    case title = "title"
+}
+
+public class _Role: NSManagedObject {
+
+    // MARK: - Class methods
+
+    public class func entityName () -> String {
+        return "Role"
+    }
+
+    public class func entity(managedObjectContext: NSManagedObjectContext) -> NSEntityDescription? {
+        return NSEntityDescription.entityForName(self.entityName(), inManagedObjectContext: managedObjectContext)
+    }
+
+    // MARK: - Life cycle methods
+
+    public override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
+
+    public convenience init?(managedObjectContext: NSManagedObjectContext) {
+        guard let entity = _Role.entity(managedObjectContext) else { return nil }
+        self.init(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+    }
+
+    // MARK: - Properties
+
+    @NSManaged public
+    var comment: String?
+
+    @NSManaged public
+    var id: NSUUID
+
+    @NSManaged public
+    var title: String?
+
+    // MARK: - Relationships
+
+}
+

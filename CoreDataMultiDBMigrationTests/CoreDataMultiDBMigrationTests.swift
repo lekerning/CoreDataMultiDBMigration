@@ -29,27 +29,29 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
     }
 
 
-    func testServerDB_OriginalVersion() {
-
-        // Test original model version
+    func clearFilesForStore(storeName: String) {
         let fileManager = NSFileManager.defaultManager()
-        let serverModelName = "Server"
-        let storeFile = "server.sqlite"
-
-        if let storePath = docDir.URLByAppendingPathComponent(storeFile).path {
-            let files = [storePath, storePath + "-shm", storePath + "-wal"]
-            for file in files {
-                if fileManager.fileExistsAtPath(file) {
-                    do {
-                        try fileManager.removeItemAtPath(file)
-                    } catch {
-                        print(error)
-                    }
+        let fileExts = [".sqlite", ".sqlite-shm", ".sqlite-wal"]
+        for ext in fileExts {
+            if let filePath = docDir.URLByAppendingPathComponent(storeName + ext).path where fileManager.fileExistsAtPath(filePath) {
+                do {
+                    try fileManager.removeItemAtPath(filePath)
+                } catch {
+                    print(error)
                 }
             }
         }
 
-        let serverCoreStack = CoreDataStack(modelName: serverModelName, modelVersion: serverModelName, storeFileName: storeFile)
+    }
+
+
+    func testServerDB_OriginalVersion() {
+        // Test original model version
+        let serverModelName = "Server"
+        let serverStoreName = "server"
+        // Test begin, clear old stores
+        self.clearFilesForStore(serverStoreName)
+        let serverCoreStack = CoreDataStack(modelName: serverModelName, modelVersion: serverModelName, storeFileName: serverStoreName + ".sqlite")
         let serverContext = serverCoreStack.theMainContext
 
         let newComment0: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Comment", inManagedObjectContext: serverContext)
@@ -66,7 +68,6 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         newComment1.setValue("This is second comment from  young", forKey: "content")
         newComment1.setValue(NSDate(), forKey: "createdAt")
 
-
         let issue0: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Issue", inManagedObjectContext: serverContext)
         let issueId0 = NSUUID()
 
@@ -77,6 +78,44 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         issue0.setValue([id0, id1], forKey: IssueAttributes.comments.rawValue)
 
         serverCoreStack.saveMainContext()
+
+        // Local db, ===
+        let localModelName = "Local"
+        let localStoreName = "Local"
+
+        self.clearFilesForStore(localStoreName)
+
+
+        let localCoreStack = CoreDataStack(modelName: localModelName, modelVersion: localModelName, storeFileName: localStoreName + ".sqlite")
+        let localContext = localCoreStack.theMainContext
+
+        let user0 = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: localContext)
+
+        user0.setValue(NSUUID(), forKey: UserAttributes.id.rawValue)
+        user0.setValue("Lily", forKey: UserAttributes.name.rawValue)
+        user0.setValue("China", forKey: UserAttributes.country.rawValue)
+
+
+        let user1 = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: localContext)
+        user1.setValue(NSUUID(), forKey: UserAttributes.id.rawValue)
+        user1.setValue("Jason", forKey: UserAttributes.name.rawValue)
+        user1.setValue("US", forKey: UserAttributes.country.rawValue)
+
+
+
+        let role0 = NSEntityDescription.insertNewObjectForEntityForName("Role", inManagedObjectContext: localContext)
+        role0.setValue(NSUUID(), forKey: RoleAttributes.id.rawValue)
+        role0.setValue("Teacher", forKey: RoleAttributes.title.rawValue)
+        role0.setValue("people who teach others", forKey: RoleAttributes.comment.rawValue)
+
+
+        let role1 = NSEntityDescription.insertNewObjectForEntityForName("Role", inManagedObjectContext: localContext)
+        role1.setValue(NSUUID(), forKey: RoleAttributes.id.rawValue)
+        role1.setValue("Engineer", forKey: RoleAttributes.title.rawValue)
+        role1.setValue("People who has special skill", forKey: RoleAttributes.comment.rawValue)
+
+        localCoreStack.saveMainContext()
+
 
     }
 
