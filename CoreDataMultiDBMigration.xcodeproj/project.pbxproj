@@ -38,6 +38,12 @@
 		96A897731D7F0F67006B5A32 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897721D7F0F67006B5A32 /* Role.swift */; };
 		96A897751D7F0F94006B5A32 /* _User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897741D7F0F94006B5A32 /* _User.swift */; };
 		96A897771D7F0F9A006B5A32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A897761D7F0F9A006B5A32 /* User.swift */; };
+		96A897811D7F1D5B006B5A32 /* Local.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 96A8977B1D7F1D5B006B5A32 /* Local.sqlite */; };
+		96A897821D7F1D5B006B5A32 /* Local.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 96A8977C1D7F1D5B006B5A32 /* Local.sqlite-shm */; };
+		96A897831D7F1D5B006B5A32 /* Local.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 96A8977D1D7F1D5B006B5A32 /* Local.sqlite-wal */; };
+		96A897841D7F1D5B006B5A32 /* server.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 96A8977E1D7F1D5B006B5A32 /* server.sqlite */; };
+		96A897851D7F1D5B006B5A32 /* server.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 96A8977F1D7F1D5B006B5A32 /* server.sqlite-shm */; };
+		96A897861D7F1D5B006B5A32 /* server.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 96A897801D7F1D5B006B5A32 /* server.sqlite-wal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +80,12 @@
 		96A897761D7F0F9A006B5A32 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		96A897781D7F1842006B5A32 /* Server_V1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Server_V1.xcdatamodel; sourceTree = "<group>"; };
 		96A897791D7F191E006B5A32 /* Local_V1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Local_V1.xcdatamodel; sourceTree = "<group>"; };
+		96A8977B1D7F1D5B006B5A32 /* Local.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Local.sqlite; sourceTree = "<group>"; };
+		96A8977C1D7F1D5B006B5A32 /* Local.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Local.sqlite-shm"; sourceTree = "<group>"; };
+		96A8977D1D7F1D5B006B5A32 /* Local.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Local.sqlite-wal"; sourceTree = "<group>"; };
+		96A8977E1D7F1D5B006B5A32 /* server.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.sqlite; sourceTree = "<group>"; };
+		96A8977F1D7F1D5B006B5A32 /* server.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "server.sqlite-shm"; sourceTree = "<group>"; };
+		96A897801D7F1D5B006B5A32 /* server.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "server.sqlite-wal"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,7 @@
 		967A17581D7C5BC9007652CF /* CoreDataMultiDBMigrationTests */ = {
 			isa = PBXGroup;
 			children = (
+				96A8977A1D7F1D17006B5A32 /* Data1.0 */,
 				967A17591D7C5BC9007652CF /* CoreDataMultiDBMigrationTests.swift */,
 				967A175B1D7C5BC9007652CF /* Info.plist */,
 			);
@@ -175,6 +188,19 @@
 				968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		96A8977A1D7F1D17006B5A32 /* Data1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				96A8977B1D7F1D5B006B5A32 /* Local.sqlite */,
+				96A8977C1D7F1D5B006B5A32 /* Local.sqlite-shm */,
+				96A8977D1D7F1D5B006B5A32 /* Local.sqlite-wal */,
+				96A8977E1D7F1D5B006B5A32 /* server.sqlite */,
+				96A8977F1D7F1D5B006B5A32 /* server.sqlite-shm */,
+				96A897801D7F1D5B006B5A32 /* server.sqlite-wal */,
+			);
+			path = Data1.0;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +289,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				967A174F1D7C5BC9007652CF /* LaunchScreen.storyboard in Resources */,
+				96A897821D7F1D5B006B5A32 /* Local.sqlite-shm in Resources */,
 				967A174C1D7C5BC9007652CF /* Assets.xcassets in Resources */,
 				967A174A1D7C5BC9007652CF /* Main.storyboard in Resources */,
+				96A897841D7F1D5B006B5A32 /* server.sqlite in Resources */,
+				96A897861D7F1D5B006B5A32 /* server.sqlite-wal in Resources */,
+				96A897851D7F1D5B006B5A32 /* server.sqlite-shm in Resources */,
+				96A897831D7F1D5B006B5A32 /* Local.sqlite-wal in Resources */,
+				96A897811D7F1D5B006B5A32 /* Local.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
