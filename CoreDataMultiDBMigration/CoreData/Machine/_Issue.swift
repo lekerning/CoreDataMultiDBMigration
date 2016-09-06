@@ -5,7 +5,6 @@ import Foundation
 import CoreData
 
 public enum IssueAttributes: String {
-    case comments = "comments"
     case content = "content"
     case createdAt = "createdAt"
     case id = "id"
@@ -40,9 +39,6 @@ public class _Issue: NSManagedObject {
     }
 
     // MARK: - Properties
-
-    @NSManaged public
-    var comments: NSArray?
 
     @NSManaged public
     var content: String?

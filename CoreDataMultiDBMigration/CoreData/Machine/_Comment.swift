@@ -8,6 +8,11 @@ public enum CommentAttributes: String {
     case content = "content"
     case createdAt = "createdAt"
     case id = "id"
+    case issueId = "issueId"
+}
+
+public enum CommentUserInfo: String {
+    case attributeValueClassName = "attributeValueClassName"
 }
 
 public class _Comment: NSManagedObject {
@@ -43,6 +48,9 @@ public class _Comment: NSManagedObject {
 
     @NSManaged public
     var id: NSUUID
+
+    @NSManaged public
+    var issueId: AnyObject
 
     // MARK: - Relationships
 

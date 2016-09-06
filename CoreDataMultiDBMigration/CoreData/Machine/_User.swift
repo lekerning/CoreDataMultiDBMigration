@@ -8,6 +8,7 @@ public enum UserAttributes: String {
     case country = "country"
     case id = "id"
     case name = "name"
+    case role = "role"
 }
 
 public class _User: NSManagedObject {
@@ -43,6 +44,9 @@ public class _User: NSManagedObject {
 
     @NSManaged public
     var name: String?
+
+    @NSManaged public
+    var role: NSUUID?
 
     // MARK: - Relationships
 

@@ -28,7 +28,6 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
 
     }
 
-
     func clearFilesForStore(storeName: String) {
         let fileManager = NSFileManager.defaultManager()
         let fileExts = [".sqlite", ".sqlite-shm", ".sqlite-wal"]
@@ -75,7 +74,7 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         issue0.setValue("First issue", forKey: IssueAttributes.title.rawValue)
         issue0.setValue("First issue in original model version", forKey: IssueAttributes.content.rawValue)
         issue0.setValue(NSDate(), forKey: IssueAttributes.createdAt.rawValue)
-        issue0.setValue([id0, id1], forKey: IssueAttributes.comments.rawValue)
+        issue0.setValue([id0, id1], forKey: "comments")
 
         serverCoreStack.saveMainContext()
 
@@ -84,7 +83,6 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         let localStoreName = "Local"
 
         self.clearFilesForStore(localStoreName)
-
 
         let localCoreStack = CoreDataStack(modelName: localModelName, modelVersion: localModelName, storeFileName: localStoreName + ".sqlite")
         let localContext = localCoreStack.theMainContext
@@ -102,7 +100,6 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         user1.setValue("US", forKey: UserAttributes.country.rawValue)
 
 
-
         let role0 = NSEntityDescription.insertNewObjectForEntityForName("Role", inManagedObjectContext: localContext)
         role0.setValue(NSUUID(), forKey: RoleAttributes.id.rawValue)
         role0.setValue("Teacher", forKey: RoleAttributes.title.rawValue)
@@ -115,7 +112,6 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         role1.setValue("People who has special skill", forKey: RoleAttributes.comment.rawValue)
 
         localCoreStack.saveMainContext()
-
 
     }
 

@@ -72,6 +72,8 @@
 		96A897721D7F0F67006B5A32 /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		96A897741D7F0F94006B5A32 /* _User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _User.swift; sourceTree = "<group>"; };
 		96A897761D7F0F9A006B5A32 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		96A897781D7F1842006B5A32 /* Server_V1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Server_V1.xcdatamodel; sourceTree = "<group>"; };
+		96A897791D7F191E006B5A32 /* Local_V1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Local_V1.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Server.xcdatamodeld/Server.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true\n/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Local.xcdatamodeld/Local.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true";
+			shellScript = "/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Server.xcdatamodeld/Server_V1.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true\n/usr/local/bin/mogenerator -v2 -m CoreDataMultiDBMigration/Model/Local.xcdatamodeld/Local_V1.xcdatamodel  -M CoreDataMultiDBMigration/CoreData/Machine/ -H CoreDataMultiDBMigration/CoreData/Human/  --swift --template-var arc=true";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -538,9 +540,10 @@
 		967A17921D7C69EF007652CF /* Server.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				96A897781D7F1842006B5A32 /* Server_V1.xcdatamodel */,
 				967A17931D7C69EF007652CF /* Server.xcdatamodel */,
 			);
-			currentVersion = 967A17931D7C69EF007652CF /* Server.xcdatamodel */;
+			currentVersion = 96A897781D7F1842006B5A32 /* Server_V1.xcdatamodel */;
 			path = Server.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
@@ -548,9 +551,10 @@
 		968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				96A897791D7F191E006B5A32 /* Local_V1.xcdatamodel */,
 				968D07F51D7DB83A002480F2 /* Local.xcdatamodel */,
 			);
-			currentVersion = 968D07F51D7DB83A002480F2 /* Local.xcdatamodel */;
+			currentVersion = 96A897791D7F191E006B5A32 /* Local_V1.xcdatamodel */;
 			path = Local.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
