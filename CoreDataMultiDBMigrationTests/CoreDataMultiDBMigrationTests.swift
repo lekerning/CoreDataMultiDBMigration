@@ -113,6 +113,67 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
 
         localCoreStack.saveMainContext()
 
+    }
+
+
+    func test_MigrationDataBaseOfV0() {
+
+        let testFolder = "DataV0"
+        guard let parentFolderPath = docDir.URLByAppendingPathComponent(testFolder).path else {
+            XCTAssert(false)
+            return
+        }
+
+        let fileManager = NSFileManager.defaultManager()
+        if fileManager.fileExistsAtPath(parentFolderPath) {
+            do {
+                try fileManager.removeItemAtPath(parentFolderPath)
+            } catch {
+                print(error)
+            }
+        }
+
+        do {
+            try fileManager.createDirectoryAtPath(parentFolderPath, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            print(error)
+        }
+
+        let storeNames = ["Server", "Local"]
+        let exts = [".sqlite", ".sqlite-shm", ".sqlite-wal"]
+        let bundleURL =  NSBundle.mainBundle().bundleURL
+
+        for store in storeNames {
+            for ext in exts {
+                let file = store + ext
+                let sourceURL = bundleURL.URLByAppendingPathComponent(file)
+                let destinationURL = docDir.URLByAppendingPathComponent(testFolder).URLByAppendingPathComponent(file)
+                if let sourcePath = sourceURL.path where fileManager.fileExistsAtPath(sourcePath) {
+
+                    do {
+
+                        try fileManager.copyItemAtURL(sourceURL, toURL: destinationURL)
+                    } catch {
+                        print(error)
+                    }
+
+
+                }
+            }
+        }
+
+        // do migration
+        
+        
+
+
+
+
+
+
+
+
+
 
     }
 
