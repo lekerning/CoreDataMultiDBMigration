@@ -27,6 +27,8 @@
 		9641D97C1D85395F0005D286 /* CustomMultiDBMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */; };
 		9641D9891D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9881D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel */; };
 		9641D9961D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9951D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift */; };
+		9641D99C1D859A2D0005D286 /* LocalV0ToV1MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9641D99B1D859A2D0005D286 /* LocalV0ToV1MappingModel.xcmappingmodel */; };
+		9641D99E1D859A600005D286 /* LocalV0ToV1UserMappingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D99D1D859A600005D286 /* LocalV0ToV1UserMappingPolicy.swift */; };
 		967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17441D7C5BC9007652CF /* AppDelegate.swift */; };
 		967A17471D7C5BC9007652CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17461D7C5BC9007652CF /* ViewController.swift */; };
 		967A174A1D7C5BC9007652CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967A17481D7C5BC9007652CF /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMultiDBMigrationManager.swift; sourceTree = "<group>"; };
 		9641D9881D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = ServerV0ToV1MappingModel.xcmappingmodel; sourceTree = "<group>"; };
 		9641D9951D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerV0ToV1IssueMappingPolicy.swift; sourceTree = "<group>"; };
+		9641D99B1D859A2D0005D286 /* LocalV0ToV1MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = LocalV0ToV1MappingModel.xcmappingmodel; sourceTree = "<group>"; };
+		9641D99D1D859A600005D286 /* LocalV0ToV1UserMappingPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalV0ToV1UserMappingPolicy.swift; sourceTree = "<group>"; };
 		967A17411D7C5BC9007652CF /* CoreDataMultiDBMigration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataMultiDBMigration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967A17441D7C5BC9007652CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		967A17461D7C5BC9007652CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 		9641D99A1D858AF80005D286 /* V0ToV1 */ = {
 			isa = PBXGroup;
 			children = (
+				9641D99B1D859A2D0005D286 /* LocalV0ToV1MappingModel.xcmappingmodel */,
+				9641D99D1D859A600005D286 /* LocalV0ToV1UserMappingPolicy.swift */,
 			);
 			name = V0ToV1;
 			sourceTree = "<group>";
@@ -418,8 +424,10 @@
 				967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */,
 				967A17971D7C6A3F007652CF /* _Comment.swift in Sources */,
 				967A17981D7C6A3F007652CF /* _Issue.swift in Sources */,
+				9641D99E1D859A600005D286 /* LocalV0ToV1UserMappingPolicy.swift in Sources */,
 				9641D9781D852BD80005D286 /* CustomDataBaseInfo.swift in Sources */,
 				9641D9741D8526450005D286 /* VersionMigrationManager.swift in Sources */,
+				9641D99C1D859A2D0005D286 /* LocalV0ToV1MappingModel.xcmappingmodel in Sources */,
 				9641D9891D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel in Sources */,
 				967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */,
 				96A897711D7F0F5C006B5A32 /* _Role.swift in Sources */,
