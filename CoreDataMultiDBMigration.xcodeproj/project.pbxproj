@@ -25,6 +25,8 @@
 		9641D9761D852B120005D286 /* MultiDBMigrationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9751D852B120005D286 /* MultiDBMigrationWrapper.swift */; };
 		9641D9781D852BD80005D286 /* CustomDataBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9771D852BD80005D286 /* CustomDataBaseInfo.swift */; };
 		9641D97C1D85395F0005D286 /* CustomMultiDBMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */; };
+		9641D9891D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9881D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel */; };
+		9641D9961D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9951D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift */; };
 		967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17441D7C5BC9007652CF /* AppDelegate.swift */; };
 		967A17471D7C5BC9007652CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17461D7C5BC9007652CF /* ViewController.swift */; };
 		967A174A1D7C5BC9007652CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967A17481D7C5BC9007652CF /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		9641D9751D852B120005D286 /* MultiDBMigrationWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDBMigrationWrapper.swift; sourceTree = "<group>"; };
 		9641D9771D852BD80005D286 /* CustomDataBaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDataBaseInfo.swift; sourceTree = "<group>"; };
 		9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMultiDBMigrationManager.swift; sourceTree = "<group>"; };
+		9641D9881D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = ServerV0ToV1MappingModel.xcmappingmodel; sourceTree = "<group>"; };
+		9641D9951D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerV0ToV1IssueMappingPolicy.swift; sourceTree = "<group>"; };
 		967A17411D7C5BC9007652CF /* CoreDataMultiDBMigration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataMultiDBMigration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967A17441D7C5BC9007652CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		967A17461D7C5BC9007652CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,40 @@
 				9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */,
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		9641D9971D858AB90005D286 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				9641D9991D858AE70005D286 /* V0ToV1 */,
+				967A17921D7C69EF007652CF /* Server.xcdatamodeld */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
+		9641D9981D858AC30005D286 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				9641D99A1D858AF80005D286 /* V0ToV1 */,
+				968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */,
+			);
+			name = Local;
+			sourceTree = "<group>";
+		};
+		9641D9991D858AE70005D286 /* V0ToV1 */ = {
+			isa = PBXGroup;
+			children = (
+				9641D9951D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift */,
+				9641D9881D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel */,
+			);
+			name = V0ToV1;
+			sourceTree = "<group>";
+		};
+		9641D99A1D858AF80005D286 /* V0ToV1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = V0ToV1;
 			sourceTree = "<group>";
 		};
 		967A17381D7C5BC9007652CF = {
@@ -220,8 +258,8 @@
 		967A17911D7C69EF007652CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				967A17921D7C69EF007652CF /* Server.xcdatamodeld */,
-				968D07F41D7DB83A002480F2 /* Local.xcdatamodeld */,
+				9641D9981D858AC30005D286 /* Local */,
+				9641D9971D858AB90005D286 /* Server */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96A897771D7F0F9A006B5A32 /* User.swift in Sources */,
+				9641D9961D8585E30005D286 /* ServerV0ToV1IssueMappingPolicy.swift in Sources */,
 				96A897751D7F0F94006B5A32 /* _User.swift in Sources */,
 				967A17471D7C5BC9007652CF /* ViewController.swift in Sources */,
 				9641D9761D852B120005D286 /* MultiDBMigrationWrapper.swift in Sources */,
@@ -381,6 +420,7 @@
 				967A17981D7C6A3F007652CF /* _Issue.swift in Sources */,
 				9641D9781D852BD80005D286 /* CustomDataBaseInfo.swift in Sources */,
 				9641D9741D8526450005D286 /* VersionMigrationManager.swift in Sources */,
+				9641D9891D854E420005D286 /* ServerV0ToV1MappingModel.xcmappingmodel in Sources */,
 				967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */,
 				96A897711D7F0F5C006B5A32 /* _Role.swift in Sources */,
 			);

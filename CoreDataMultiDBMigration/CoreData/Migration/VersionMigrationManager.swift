@@ -138,6 +138,14 @@ class VersionMigrationManager {
                 try manager.migrateStoreFromURL(storeURL, type: NSSQLiteStoreType, options: nil, withMappingModel: mappingModel, toDestinationURL: destinationURL, destinationType: NSSQLiteStoreType, destinationOptions: nil)
             } catch {
                 print(error)
+                if let destinationFolderPath = destinationURL.URLByDeletingLastPathComponent?.path where NSFileManager.defaultManager().fileExistsAtPath(destinationFolderPath) {
+                    do {
+                        try NSFileManager.defaultManager().removeItemAtPath(destinationFolderPath)
+                    } catch {
+                        print(error)
+                    }
+
+                }
                 return false
             }
             if !self.backupWithProjectFolder(url, sourceStoreURL: storeURL, destinationURL: destinationURL, modelName: dbInfo.modelName(), currentVersionName: dm) {

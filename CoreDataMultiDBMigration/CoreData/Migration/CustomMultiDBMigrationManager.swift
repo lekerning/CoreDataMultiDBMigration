@@ -21,9 +21,11 @@ extension CustomMultiDBMigrationManager: MultiDBMigrationWrapperDelegate {
     }
 
     func migrationRoadMap() -> VersionMigrationManager {
-        let versionInfoServer: VersionMigrationAble = DataBaseInfo.Server(ModelVersionInfo(currentModel: "Server.mom", mappingModel: nil, destinationModel: nil))
+        let versionInfoServer: VersionMigrationAble = DataBaseInfo.Server(ModelVersionInfo(currentModel: "Server.mom", mappingModel: "ServerV0ToV1MappingModel.cdm", destinationModel: "Server_V1.mom"))
         let versionInfo1Local: VersionMigrationAble = DataBaseInfo.Local(ModelVersionInfo(currentModel: "Local.mom", mappingModel: nil, destinationModel: nil))
         let singleManage1_0 = VersionMigrationManager(dbs: [versionInfoServer, versionInfo1Local])
+
+
 
         let versionInfoServer1: VersionMigrationAble = DataBaseInfo.Server(ModelVersionInfo(currentModel: "Server_V1.mom", mappingModel: nil, destinationModel: nil))
         let versionInfo1Local1: VersionMigrationAble = DataBaseInfo.Local(ModelVersionInfo(currentModel: "Local_V1.mom", mappingModel: nil, destinationModel: nil))
