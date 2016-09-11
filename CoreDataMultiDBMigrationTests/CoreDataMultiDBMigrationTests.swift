@@ -163,17 +163,21 @@ class CoreDataMultiDBMigrationTests: XCTestCase {
         }
 
         // do migration
-        
-        
+        let manager = CustomMultiDBMigrationManager(url: NSURL(fileURLWithPath: parentFolderPath))
+        let wrapper = MultiDBMigrationWrapper(delegate: manager)
 
+        let migrationResult = wrapper.doMigration()
 
+        switch migrationResult {
 
+        case .NoNeedToDo, .MigrationSuccess:
+            print(migrationResult.rawValue)
 
+        case .MigrationFailed:
 
+            XCTAssert(false)
 
-
-
-
+        }
 
     }
 
