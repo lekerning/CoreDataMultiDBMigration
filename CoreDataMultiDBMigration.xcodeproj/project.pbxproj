@@ -21,6 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9641D9741D8526450005D286 /* VersionMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9731D8526450005D286 /* VersionMigrationManager.swift */; };
+		9641D9761D852B120005D286 /* MultiDBMigrationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9751D852B120005D286 /* MultiDBMigrationWrapper.swift */; };
+		9641D9781D852BD80005D286 /* CustomDataBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D9771D852BD80005D286 /* CustomDataBaseInfo.swift */; };
+		9641D97C1D85395F0005D286 /* CustomMultiDBMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */; };
 		967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17441D7C5BC9007652CF /* AppDelegate.swift */; };
 		967A17471D7C5BC9007652CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A17461D7C5BC9007652CF /* ViewController.swift */; };
 		967A174A1D7C5BC9007652CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967A17481D7C5BC9007652CF /* Main.storyboard */; };
@@ -57,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9641D9731D8526450005D286 /* VersionMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionMigrationManager.swift; sourceTree = "<group>"; };
+		9641D9751D852B120005D286 /* MultiDBMigrationWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDBMigrationWrapper.swift; sourceTree = "<group>"; };
+		9641D9771D852BD80005D286 /* CustomDataBaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDataBaseInfo.swift; sourceTree = "<group>"; };
+		9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMultiDBMigrationManager.swift; sourceTree = "<group>"; };
 		967A17411D7C5BC9007652CF /* CoreDataMultiDBMigration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataMultiDBMigration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967A17441D7C5BC9007652CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		967A17461D7C5BC9007652CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +114,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		961320D11D814B4F007779D5 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				9641D9791D8531470005D286 /* Common */,
+				9641D97A1D8531690005D286 /* Custom */,
+			);
+			path = Migration;
+			sourceTree = "<group>";
+		};
+		9641D9791D8531470005D286 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9641D9731D8526450005D286 /* VersionMigrationManager.swift */,
+				9641D9751D852B120005D286 /* MultiDBMigrationWrapper.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		9641D97A1D8531690005D286 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				9641D9771D852BD80005D286 /* CustomDataBaseInfo.swift */,
+				9641D97B1D85395F0005D286 /* CustomMultiDBMigrationManager.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		967A17381D7C5BC9007652CF = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				967A179D1D7C6BF5007652CF /* CoreDataStack.swift */,
-				967A178A1D7C6985007652CF /* Machine */,
 				967A17871D7C6985007652CF /* Human */,
+				967A178A1D7C6985007652CF /* Machine */,
+				961320D11D814B4F007779D5 /* Migration */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -333,14 +369,18 @@
 				96A897771D7F0F9A006B5A32 /* User.swift in Sources */,
 				96A897751D7F0F94006B5A32 /* _User.swift in Sources */,
 				967A17471D7C5BC9007652CF /* ViewController.swift in Sources */,
+				9641D9761D852B120005D286 /* MultiDBMigrationWrapper.swift in Sources */,
 				96A897731D7F0F67006B5A32 /* Role.swift in Sources */,
 				967A179C1D7C6A48007652CF /* Issue.swift in Sources */,
+				9641D97C1D85395F0005D286 /* CustomMultiDBMigrationManager.swift in Sources */,
 				967A179B1D7C6A48007652CF /* Comment.swift in Sources */,
 				968D07F61D7DB83A002480F2 /* Local.xcdatamodeld in Sources */,
 				967A17941D7C69EF007652CF /* Server.xcdatamodeld in Sources */,
 				967A17451D7C5BC9007652CF /* AppDelegate.swift in Sources */,
 				967A17971D7C6A3F007652CF /* _Comment.swift in Sources */,
 				967A17981D7C6A3F007652CF /* _Issue.swift in Sources */,
+				9641D9781D852BD80005D286 /* CustomDataBaseInfo.swift in Sources */,
+				9641D9741D8526450005D286 /* VersionMigrationManager.swift in Sources */,
 				967A179E1D7C6BF5007652CF /* CoreDataStack.swift in Sources */,
 				96A897711D7F0F5C006B5A32 /* _Role.swift in Sources */,
 			);
