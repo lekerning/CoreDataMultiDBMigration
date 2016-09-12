@@ -1,7 +1,8 @@
 # CoreDataMultiDBMigration
 Core Data multi data base migration, multi data bases migrate from certain version to the latest version concurrently, do data operation across data base
     
-    1 Use:
+    Useage:  
+    
         let wrapper = MultiDBMigrationWrapper(delegate: someDelegate)
         let migrationResult = wrapper.doMigration()
         switch migrationResult {
@@ -15,6 +16,6 @@ Core Data multi data base migration, multi data bases migrate from certain versi
             // do something
             print(migrationResult.rawValue)
         }
-
+        
         someDelegate is a member of class that should implement MultiDBMigrationWrapperDelegate protocol
 
